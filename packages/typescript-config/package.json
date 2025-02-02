@@ -1,0 +1,8 @@
+{
+  "name": "@repo/typescript-config",
+  "version": "0.4.11",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  }
+}

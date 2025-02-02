@@ -1,0 +1,32 @@
+{
+  "name": "subset-monorepo",
+  "version": "0.4.11",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SubsetLabs/subset-monorepo"
+  },
+  "scripts": {
+    "web": "pnpm -F web run dev",
+    "tsc": "tsc -b --watch"
+  },
+  "devDependencies": {
+    "typescript": "5.7.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "resolutions": {
+    "@effect/opentelemetry": "~0.42.1"
+  },
+  "dependencies": {
+    "effect": "^3.12.7",
+    "dotenv": "^16.4.5",
+    "marked": "^4.3.0"
+  },
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+}

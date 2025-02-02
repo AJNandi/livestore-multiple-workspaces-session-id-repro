@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "es6",
+    "lib": ["es6", "es2021", "dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "downlevelIteration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "rootDir": "src",
+    "outDir": "dist",
+    "exactOptionalPropertyTypes": false,
+    "composite": true
+  },
+  "include": ["src"],
+  "paths": {
+    "@livestore/db-schema": ["../../node_modules/@livestore/db-schema"]
+  }
+}
