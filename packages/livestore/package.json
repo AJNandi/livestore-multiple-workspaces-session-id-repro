@@ -7,11 +7,11 @@
   "types": "./src/index.ts",
   "scripts": {},
   "dependencies": {
-    "@livestore/livestore": "0.3.0-dev.10",
-    "@livestore/web": "0.3.0-dev.10",
-    "@livestore/react": "0.3.0-dev.10",
-    "@livestore/common": "0.3.0-dev.10",
-    "@livestore/devtools-react": "0.3.0-dev.10",
+    "@livestore/livestore": "0.3.0-dev.12",
+    "@livestore/web": "0.3.0-dev.12",
+    "@livestore/react": "0.3.0-dev.12",
+    "@livestore/common": "0.3.0-dev.12",
+    "@livestore/devtools-react": "0.3.0-dev.12",
     "@livestore/wa-sqlite": "1.0.3-dev.7",
     "uuid": "^11.0.5"
   },

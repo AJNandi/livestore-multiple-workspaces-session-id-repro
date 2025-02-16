@@ -41,3 +41,45 @@ Expected schema: (ReadonlyArray<({ readonly value: (parseJson <-> { readonly ord
 
 ```
 
+# LiveStore Build Error Reproduction 
+
+## Steps to Reproduce
+
+Install deps
+
+```
+pnpm i
+```
+
+Build the app
+
+```
+pnpm build
+```
+
+Host preview
+
+```
+pnpm preview
+```
+
+Open the app at http://localhost:4173/
+
+
+## Actual Behavior
+
+The app fails to build with the following error:
+
+``` 
+hook.js:608 Error: useStore can only be used inside StoreContext.Provider
+    at Iv (LiveStoreContext.js:10:15)
+    at Ov (useQuery.js:24:23)
+    at zv (useQuery.js:20:48)
+```
+
+
+
+
+
+
+

@@ -1,19 +1,21 @@
 import { queryDb, SessionIdSymbol } from "@livestore/livestore"
-import { useRow, useScopedQuery } from "@livestore/react"
+import { useRow, useQuery } from "@livestore/react"
 import { FilterState, tables } from "./schema.js"
 
 const filterStateToOrderBy = (filterState: FilterState) => [{ col: filterState.orderBy, direction: filterState.orderDirection }]
 
 export const useFiles = (): readonly string[] => {
-  return useScopedQuery(
-    () =>
-      queryDb((get) =>
+  return useQuery(
+    queryDb(
+      (get) =>
         tables.file.query
           .select("id", { pluck: true })
           .where("deleted", "=", null)
-          .orderBy(filterStateToOrderBy(get(filterState$)))
-      ),
-    []
+          .orderBy(filterStateToOrderBy(get(filterState$))),
+      {
+        deps: `useFilesByFilterState`,
+      }
+    )
   )
 }
 

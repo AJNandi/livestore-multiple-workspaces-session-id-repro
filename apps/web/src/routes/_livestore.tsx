@@ -47,7 +47,7 @@ export const Route = createFileRoute("/_livestore")({
   component: LiveStoreLayout,
 })
 
-const makeAdapterForWorkspace = (activeWorkspaceId: string) =>
+const makeAdapterForWorkspace = (_activeWorkspaceId: string) =>
   makeAdapter({
     worker: LiveStoreWorker,
     sharedWorker: LiveStoreSharedWorker,
@@ -56,14 +56,7 @@ const makeAdapterForWorkspace = (activeWorkspaceId: string) =>
     // NOTE this should only be used for convenience when developing (i.e. via `?reset` in the URL) and is disabled in production
     resetPersistence,
     // @ts-expect-error TODO fix typing
-    syncBackend: import.meta.env.VITE_LIVESTORE_SYNC_URL
-      ? {
-          type: "cf",
-          url: import.meta.env.VITE_LIVESTORE_SYNC_URL,
-          // --> THIS IS WHAT WE NEED TO CHANGE TO GET THE WORKER TO SYNC TO THE CORRECT WORKSPACE
-          roomId: activeWorkspaceId,
-        }
-      : undefined,
+    syncBackend: undefined,
   })
 
 function LiveStoreLayout() {
